@@ -11,44 +11,6 @@
  color: var(--dark);
 }
 
-/* -- LOGO TEXT -- */
-.logo-text {
- font-weight: 600;
- color: var(--primary);
- letter-spacing: 0.5px;
-}
-
-/* -- NAV ICONS -- */
-.nav-icon svg,
-.delete-icon svg {
- color: var(--dark);
- transition: color 0.2s ease-in-out;
- width: 2.25rem;
- height: 2.25rem;
- cursor: pointer;
-}
-
-.nav-icon:hover svg,
-.delete-icon:hover svg {
- color: var(--primary);
-}
-
-/* -- CART ICON -- */
-.cart-icon {
- position: relative;
-}
-
-.cart-icon span {
- position: absolute;
- top: -0.3rem;
- right: -0.3rem;
- background: var(--secondary);
- color: white;
- border-radius: 50%;
- padding: 0.3rem 0.6rem;
- font-size: 0.75rem;
- font-weight: bold;
-}
 
 /* -- BUTTONS -- */
 button {
