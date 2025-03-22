@@ -34,55 +34,30 @@ Building a dynamic eCommerce store with:
 
 ## ⚙️ **Setup & Installation**  
 
-1️⃣ **Clone the repo:**  
+1. Clone the repo:
+
 ```bash
 gh repo clone EVeskje/react-ecom-store
 ```
 
-2️⃣ Move into the project folder:
+2. Install the required dependencies:
 
 ```bash
-cd react-ecom-store
+npm i
 ```
 
-3️⃣ Install dependencies:
-
-```bash
-npm install
-```
-
-4️⃣ Run the development server:
+3. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-5️⃣ Build for production:
+4. Build the project for production
 
 ```bash
 npm run build
 ```
 
-🤝 Contribute & Improve
-
-1️⃣ Fork the repo
-2️⃣ Create a new branch:
-
-```bash
-git checkout -b feature/amazing-feature
-```
-
-3️⃣ Make changes & commit:
-
-```bash
-git commit -m "🚀 Added amazing feature"
-```
-
-4️⃣ Push & create a PR:
-
-```bash
-git push origin feature/amazing-feature
-```
 
 📬 Let’s Connect!
 

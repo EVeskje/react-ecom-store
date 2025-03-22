@@ -1,0 +1,92 @@
+:root {
+ --primary: #0077b6; /* Deep Blue */
+ --secondary: #f4a261; /* Soft Orange */
+ --accent: #e9f5ff; /* Light Blue */
+ --dark: #1b263b; /* Dark Navy */
+ --light: #f8f9fa; /* Soft Off-White */
+
+ font-family: "Urbanist", sans-serif;
+ font-size: 16px;
+ background-color: var(--light);
+ color: var(--dark);
+}
+
+/* -- LOGO TEXT -- */
+.logo-text {
+ font-weight: 600;
+ color: var(--primary);
+ letter-spacing: 0.5px;
+}
+
+/* -- NAV ICONS -- */
+.nav-icon svg,
+.delete-icon svg {
+ color: var(--dark);
+ transition: color 0.2s ease-in-out;
+ width: 2.25rem;
+ height: 2.25rem;
+ cursor: pointer;
+}
+
+.nav-icon:hover svg,
+.delete-icon:hover svg {
+ color: var(--primary);
+}
+
+/* -- CART ICON -- */
+.cart-icon {
+ position: relative;
+}
+
+.cart-icon span {
+ position: absolute;
+ top: -0.3rem;
+ right: -0.3rem;
+ background: var(--secondary);
+ color: white;
+ border-radius: 50%;
+ padding: 0.3rem 0.6rem;
+ font-size: 0.75rem;
+ font-weight: bold;
+}
+
+/* -- BUTTONS -- */
+button {
+ font-size: 1rem;
+ background: var(--primary);
+ color: white;
+ padding: 0.6rem 1.2rem;
+ border: none;
+ border-radius: 0.5rem;
+ cursor: pointer;
+ transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+button:hover {
+ background: var(--secondary);
+ transform: scale(1.05);
+}
+
+/* -- LOADER -- */
+.loader-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-top: 2rem;
+}
+
+.content-loader {
+ width: 4rem;
+ height: 4rem;
+ border: 0.6rem solid #bbb;
+ border-top: 0.6rem solid var(--primary);
+ border-radius: 50%;
+ margin: 1rem auto;
+ animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+ to {
+  transform: rotate(360deg);
+ }
+}
