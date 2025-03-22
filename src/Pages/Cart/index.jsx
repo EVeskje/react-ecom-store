@@ -14,7 +14,6 @@ export const ShoppingCart = () => {
   const [infoMessage, setInfoMessage] = useState("");
   const navigate = useNavigate();
 
-  // Calculate total price with useMemo to prevent unnecessary recalculations
   const totalPrice = useMemo(
     () =>
       cart
@@ -23,10 +22,8 @@ export const ShoppingCart = () => {
     [cart]
   );
 
-  // Memoize the empty cart status to avoid recalculations
   const isCartEmpty = useMemo(() => cart.length === 0, [cart]);
 
-  // Use useCallback to prevent unnecessary re-renders
   const handleCheckout = useCallback(
     (e) => {
       e.preventDefault();
@@ -43,7 +40,6 @@ export const ShoppingCart = () => {
     [isCartEmpty, clearCart, navigate]
   );
 
-  // Handle clear cart with feedback
   const handleClearCart = useCallback(() => {
     clearCart();
     setInfoMessage("Your cart has been cleared!");
@@ -51,7 +47,7 @@ export const ShoppingCart = () => {
   }, [clearCart]);
 
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 p-6">
+    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
       <Helmet>
         <title>{`Shopping Cart (${cart.length}) | Trendora`}</title>
         <meta
@@ -60,29 +56,29 @@ export const ShoppingCart = () => {
         />
       </Helmet>
 
-      <h1 className="text-4xl text-center font-semibold text-gray-900 dark:text-white mb-6">
+      <h1 className="text-4xl text-center font-bold text-gray-900 dark:text-white mb-8">
         Shopping Cart {!isCartEmpty && `(${cart.length})`}
       </h1>
 
       {infoMessage && <InfoMessage message={infoMessage} />}
 
-      <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-3">
+      <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-2">
         {/* Cart Items */}
-        <section className="md:col-span-2">
+        <section className="space-y-6">
           {!isCartEmpty ? (
-            <div className="space-y-4">
+            <div className="space-y-6">
               {cart.map((product) => (
                 <CartProduct key={product.id} product={product} />
               ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800">
-              <p className="text-lg font-medium text-gray-600 dark:text-gray-300">
+            <div className="flex flex-col items-center justify-center p-8 rounded-lg shadow-lg bg-white dark:bg-gray-800">
+              <p className="text-xl font-semibold text-gray-600 dark:text-gray-300 mb-4">
                 Your cart is empty
               </p>
               <Link
                 to="/"
-                className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
               >
                 Continue shopping
               </Link>
@@ -91,21 +87,21 @@ export const ShoppingCart = () => {
         </section>
 
         {/* Order Summary */}
-        <section className="p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800 h-fit">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Order Summary</h2>
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Order Summary</h2>
 
-          <div className="space-y-2 mb-4">
-            <div className="flex justify-between text-gray-600 dark:text-gray-300">
+          <div className="space-y-4 mb-6">
+            <div className="flex justify-between text-lg text-gray-600 dark:text-gray-300">
               <span>Items ({cart.length}):</span>
               <span>${totalPrice}</span>
             </div>
 
-            <div className="flex justify-between text-gray-600 dark:text-gray-300">
+            <div className="flex justify-between text-lg text-gray-600 dark:text-gray-300">
               <span>Shipping:</span>
               <span>{isCartEmpty ? "$0.00" : "Free"}</span>
             </div>
 
-            <div className="pt-2 mt-2 border-t border-gray-200 dark:border-gray-700 flex justify-between text-lg font-semibold text-gray-900 dark:text-white">
+            <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700 flex justify-between text-xl font-semibold text-gray-900 dark:text-white">
               <span>Total:</span>
               <span>${totalPrice}</span>
             </div>
@@ -124,7 +120,7 @@ export const ShoppingCart = () => {
 
           {!isCartEmpty && (
             <button
-              className="w-full mt-4 py-3 rounded-lg bg-white text-gray-900 dark:bg-gray-700 dark:text-white border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600 transition font-semibold"
+              className="w-full mt-4 py-3 rounded-lg bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-white border border-gray-300 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-600 transition font-semibold"
               onClick={handleClearCart}
               aria-label="Clear all items from cart"
             >
