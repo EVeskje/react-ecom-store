@@ -32,7 +32,7 @@ Building a dynamic eCommerce store with:
 
 ---
 
-## ⚙️ **Setup & Installation**  
+## ⚙️ **Setup & Installation**
 
 1. Clone the repo:
 
