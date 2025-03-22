@@ -2,7 +2,7 @@
 
 Welcome to **Trendora**, a sleek and modern eCommerce store built with **Vite, Tailwind, and React**. This project is part of my **JavaScript Frameworks** assignment at **Noroff** – showcasing a fast, responsive, and stylish shopping experience.  
 
-![🚀 Trendora Preview]()  
+![🚀 Trendora Preview](/src/assets/images/Trendora.png)  
 
 ---
 
