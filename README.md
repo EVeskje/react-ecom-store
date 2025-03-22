@@ -27,7 +27,7 @@ Building a dynamic eCommerce store with:
 ---
 
 ## 🔗 **Project Links**  
-🌍 **[Live Demo]()**  
+🌍 **[Live Demo](https://trendora-ecom.netlify.app/)**  
 📂 **[GitHub Repository](https://github.com/EVeskje/react-ecom-store.git)**  
 
 ---

@@ -47,7 +47,7 @@ export const ShoppingCart = () => {
   }, [clearCart]);
 
   return (
-    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
       <Helmet>
         <title>{`Shopping Cart (${cart.length}) | Trendora`}</title>
         <meta
@@ -56,21 +56,24 @@ export const ShoppingCart = () => {
         />
       </Helmet>
 
-      <h1 className="text-4xl text-center font-bold text-gray-900 dark:text-white mb-8">
+      <h1 className="text-3xl font-semibold text-center text-gray-900 dark:text-white mb-8">
         Shopping Cart {!isCartEmpty && `(${cart.length})`}
       </h1>
 
       {infoMessage && <InfoMessage message={infoMessage} />}
 
-      <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-2">
+      <div className="max-w-6xl mx-auto grid gap-8 lg:grid-cols-2">
         {/* Cart Items */}
         <section className="space-y-6">
           {!isCartEmpty ? (
-            <div className="space-y-6">
-              {cart.map((product) => (
-                <CartProduct key={product.id} product={product} />
-              ))}
-            </div>
+            cart.map((product) => (
+              <div
+                key={product.id}
+                className="flex items-center justify-between p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+              >
+                <CartProduct product={product} />
+              </div>
+            ))
           ) : (
             <div className="flex flex-col items-center justify-center p-8 rounded-lg shadow-lg bg-white dark:bg-gray-800">
               <p className="text-xl font-semibold text-gray-600 dark:text-gray-300 mb-4">
