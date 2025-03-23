@@ -1,5 +1,7 @@
 export { CheckoutSuccessPage } from "./Cart/CheckoutSuccess";
-export { Contact } from "./Contact";
+export { ShoppingCart } from "./Cart";
+
 export { Home } from "./Home";
 export { ProductPage } from "./Home/Product";
-export { ShoppingCart } from "./Cart";
+
+export { Contact } from "./Contact";
