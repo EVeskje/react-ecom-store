@@ -44,7 +44,7 @@ export const ProductPage = () => {
   const discountAmount = (product.price - product.discountedPrice).toFixed(0);
 
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-24">
       <Helmet>
         <title>{`${product.title} | Trendora`}</title>
         <meta name="description" content={`Product details for ${product.title} on Trendora`} />
